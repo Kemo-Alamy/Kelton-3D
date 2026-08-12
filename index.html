@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستكشف الهيكل العظمي 3D</title>
+    <!-- استيراد مكتبة ثلاثية الأبعاد خفيفة من جيت هاب (Three.js / Model Viewer) -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        body { margin: 0; background-color: #1a1a1a; color: white; font-family: system-ui; }
+        model-viewer { width: 100vw; height: 100vh; }
+        #info {
+            position: fixed; top: 20px; right: 20px;
+            background: rgba(0,0,0,0.8); padding: 15px;
+            border-radius: 8px; border: 1px solid #444; max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="info">
+        <h3 id="title">اضغط على أي جزء في المجسم</h3>
+        <p id="desc">سظهر وصف العظمة هنا باللغة العربية...</p>
+    </div>
+
+    <!-- استيراد المجسم الحقيقي -->
+    <model-viewer 
+        src="skeleton.glb" 
+        alt="Skeleton 3D Model"
+        camera-controls 
+        auto-rotate 
+        shadow-intensity="1"
+        touch-action="pan-y">
+    </model-viewer>
+
+</body>
+</html>
